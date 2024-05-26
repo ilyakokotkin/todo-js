@@ -8,3 +8,31 @@ taskInput.addEventListener('keypress', function(event) {
         addTask();
     }
 });
+
+// Function to add a new task
+function addTask() {
+    const taskText = taskInput.value.trim();
+    if (taskText !== '') {
+        const taskItem = document.createElement('li');
+        taskItem.className = 'task-item';
+        
+        const taskContent = document.createElement('span');
+        taskContent.textContent = taskText;
+        taskContent.addEventListener('click', function() {
+            taskItem.classList.toggle('completed');
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'delete-btn';
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', function() {
+            taskList.removeChild(taskItem);
+        });
+
+        taskItem.appendChild(taskContent);
+        taskItem.appendChild(deleteButton);
+        taskList.appendChild(taskItem);
+
+        taskInput.value = '';
+    }
+}
