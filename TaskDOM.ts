@@ -1,6 +1,6 @@
 import { Task } from "./Task";
 
-export const createTaskElement = (taskText: string, completed: boolean): HTMLElement => {
+export const createTaskElement = (taskText: string, completed: boolean): HTMLLIElement => {
     const taskItem: HTMLLIElement = document.createElement('li');
     taskItem.className = 'task-item';
     if (completed) {

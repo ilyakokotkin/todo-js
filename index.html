@@ -56,6 +56,14 @@
         <h1>To-Do List</h1>
         <input type="text" class="task-input" id="taskInput" placeholder="Add a new task...">
         <ul class="task-list" id="taskList"></ul>
+        <div>
+            <input type="password" id="passwordInput" placeholder="Enter password to unlock timer">
+            <button id="unlockButton">Unlock Timer</button>
+        </div>
+        <div id="timerSection" style="display:none;">
+            <button id="startTimerButton">Start Timer</button>
+            <span id="timerDisplay">00:00:00</span>
+        </div>
     </div>
 
     <script src="app.js"></script>
